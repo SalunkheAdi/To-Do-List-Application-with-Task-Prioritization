@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Analytics - Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-check-double"></i>
+                <span>TaskMaster</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-tasks"></i> Task Manager
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="analytics.html">
+                        <i class="fas fa-chart-bar"></i> Analytics
+                    </a>
+                </li>
+            </ul>
+            <button class="info-btn" onclick="showFeatures()">
+                <i class="fas fa-info-circle"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1><i class="fas fa-chart-line"></i> Task Analytics</h1>
+        
+        <div class="analytics-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-list-check"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Total Tasks</h3>
+                    <p id="totalTasks">0</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Completed</h3>
+                    <p id="completedTasks">0</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Pending</h3>
+                    <p id="pendingTasks">0</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-xmark"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Overdue</h3>
+                    <p id="overdueTasks">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3><i class="fas fa-pie-chart"></i> Task Status Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3><i class="fas fa-signal"></i> Tasks by Priority</h3>
+                <div class="chart-container">
+                    <canvas id="priorityChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-card full-width">
+            <h3><i class="fas fa-calendar-day"></i> Tasks Timeline</h3>
+            <div class="chart-container">
+                <canvas id="timelineChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-modal" id="featuresModal">
+        <div class="modal-content">
+            <h2><i class="fas fa-star"></i> Key Features</h2>
+            <ul>
+                <li><i class="fas fa-plus-circle"></i> Add and manage tasks easily</li>
+                <li><i class="fas fa-layer-group"></i> Prioritize tasks (Low, Medium, High)</li>
+                <li><i class="fas fa-calendar-check"></i> Track tasks with deadlines</li>
+                <li><i class="fas fa-bell"></i> Get reminders for upcoming tasks</li>
+                <li><i class="fas fa-filter"></i> Filter and sort tasks</li>
+                <li><i class="fas fa-chart-line"></i> View task analytics</li>
+            </ul>
+            <button class="close-modal" onclick="closeFeatures()">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+    </div>
+
+    <script src="js/analytics.js?v=1"></script>
+</body>
+</html> 
